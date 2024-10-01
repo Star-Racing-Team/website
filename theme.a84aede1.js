@@ -588,49 +588,62 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setTheme", ()=>setTheme);
 function setTheme() {
+    document.body.classList.add("light");
+/*
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.getItem("color-theme") === "dark" || !("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) document.body.classList.add("dark");
-    else document.body.classList.add("light");
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.add('light');
+    }
+
     // Change the icons inside the button based on previous settings
-    if (localStorage.getItem("color-theme") === "dark" || !("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) document.querySelectorAll(".theme-toggle-light-icon").forEach((element)=>{
-        element.classList.remove("hidden");
-    });
-    else document.querySelectorAll(".theme-toggle-dark-icon").forEach((element)=>{
-        element.classList.remove("hidden");
-    });
-    document.querySelectorAll(".theme-toggle").forEach((element)=>{
-        element.addEventListener("click", function() {
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.querySelectorAll('.theme-toggle-light-icon').forEach((element) => {
+            element.classList.remove('hidden');
+        });
+    } else {
+        document.querySelectorAll('.theme-toggle-dark-icon').forEach((element) => {
+            element.classList.remove('hidden');
+        });
+    }
+
+    document.querySelectorAll('.theme-toggle').forEach((element) => {
+        element.addEventListener('click', function () {
             // toggle icons inside button
-            document.querySelectorAll(".theme-toggle-light-icon").forEach((element)=>{
-                element.classList.toggle("hidden");
+            document.querySelectorAll('.theme-toggle-light-icon').forEach((element) => {
+                element.classList.toggle('hidden');
             });
-            document.querySelectorAll(".theme-toggle-dark-icon").forEach((element)=>{
-                element.classList.toggle("hidden");
+            document.querySelectorAll('.theme-toggle-dark-icon').forEach((element) => {
+                element.classList.toggle('hidden');
             });
-            if (localStorage.getItem("color-theme")) {
+
+            if (localStorage.getItem('color-theme')) {
                 // if set via local storage previously
-                if (localStorage.getItem("color-theme") === "light") {
-                    document.body.classList.remove("light");
-                    document.body.classList.add("dark");
-                    localStorage.setItem("color-theme", "dark");
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.body.classList.remove('light');
+                    document.body.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
                 } else {
-                    document.body.classList.remove("dark");
-                    document.body.classList.add("light");
-                    localStorage.setItem("color-theme", "light");
+                    document.body.classList.remove('dark');
+                    document.body.classList.add('light');
+                    localStorage.setItem('color-theme', 'light');
                 }
-            } else // if NOT set via local storage previously
-            if (document.body.classList.contains("dark")) {
-                document.body.classList.remove("dark");
-                document.body.classList.add("light");
-                localStorage.setItem("color-theme", "light");
             } else {
-                document.body.classList.remove("light");
-                document.body.classList.add("dark");
-                localStorage.setItem("color-theme", "dark");
+                // if NOT set via local storage previously
+                if (document.body.classList.contains('dark')) {
+                    document.body.classList.remove('dark');
+                    document.body.classList.add('light');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.body.classList.remove('light');
+                    document.body.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
             }
         });
     });
-}
+    */ }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["38u1R"], null, "parcelRequire10c2")
 
