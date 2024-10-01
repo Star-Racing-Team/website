@@ -1,0 +1,2 @@
+document.querySelectorAll(".sidebar li a").forEach(e=>{e.classList.remove("bg-active","text-active-text")}),document.querySelectorAll(".sidebar li:nth-child(2) a").forEach(e=>{e.classList.add("bg-active","text-active-text")}),document.querySelectorAll(".country").forEach(e=>{var t;e.innerText=(console.log(t=e.innerText),String.fromCodePoint(...t.toUpperCase().split("").map(e=>127397+e.charCodeAt())))});
+//# sourceMappingURL=adam-beardsley.ee7943c8.js.map
