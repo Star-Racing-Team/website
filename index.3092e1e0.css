@@ -1585,6 +1585,11 @@ img, video {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-\[0\.625rem\] {
   font-size: .625rem;
 }
@@ -2322,12 +2327,30 @@ img, video {
     display: flex;
   }
 
+  .md\:h-32 {
+    height: 8rem;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
+  }
+
   .md\:items-center {
     align-items: center;
   }
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
   }
 }
 

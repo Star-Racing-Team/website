@@ -598,20 +598,23 @@ function country2flag(countryCode) {
 document.querySelectorAll(".country").forEach((element)=>{
     element.innerText = country2flag(element.innerText);
 });
-function generateData(count, yrange) {
-    var i = 0;
-    var series = [];
-    while(i < count){
-        var x = (i + 1).toString();
-        var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-        series.push({
-            x: x,
-            y: y
-        });
-        i++;
-    }
-    return series;
-} // import("./breadcrumbs.js").then(function (breadcrumb) {
+document.querySelectorAll(".joined-date").forEach((element)=>{
+    if (element.innerText !== "") element.innerText = moment(element.innerText, "YYYY-MM-DD").fromNow();
+}); // function generateData(count, yrange) {
+ //     var i = 0;
+ //     var series = [];
+ //     while (i < count) {
+ //         var x = (i + 1).toString();
+ //         var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+ //         series.push({
+ //             x: x,
+ //             y: y
+ //         });
+ //         i++;
+ //     }
+ //     return series;
+ // }
+ // import("./breadcrumbs.js").then(function (breadcrumb) {
  //     breadcrumb.setCrumbs({
  //         1: {
  //             href: "drivers.html",
