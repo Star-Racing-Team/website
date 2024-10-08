@@ -588,14 +588,10 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setCrumbs", ()=>setCrumbs);
 function setCrumbs(data) {
-    console.log(data);
-    for (const [key, value] of Object.entries(data)){
-        if (key != 0) {
-            if (value.href != "") document.getElementById("breadcrumb-link-" + String(key)).setAttribute("href", String(value.href));
-            if (value.text != "") document.getElementById("breadcrumb-link-" + String(key)).innerHTML = String(value.text);
-            document.getElementById("breadcrumb-" + String(key)).classList.remove("hidden");
-        }
-        console.log(key, value);
+    for (const [key, value] of Object.entries(data))if (key != 0) {
+        if (value.href != "") document.getElementById("breadcrumb-link-" + String(key)).setAttribute("href", String(value.href));
+        if (value.text != "") document.getElementById("breadcrumb-link-" + String(key)).innerHTML = String(value.text);
+        document.getElementById("breadcrumb-" + String(key)).classList.remove("hidden");
     }
     if (Object.keys(data).length > 0) document.getElementById("breadcrumbs").classList.remove("hidden");
 }

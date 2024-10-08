@@ -599,7 +599,6 @@ require("98418342f75c066c").then(function(breadcrumb) {
     });
 });
 function country2flag(countryCode) {
-    console.log(countryCode);
     const codePoints = countryCode.toUpperCase().split("").map((char)=>127397 + char.charCodeAt());
     return String.fromCodePoint(...codePoints);
 }

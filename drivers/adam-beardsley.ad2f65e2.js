@@ -591,7 +591,6 @@ document.querySelectorAll(".sidebar li:nth-child(2) a").forEach((element)=>{
     element.classList.add("bg-active", "text-active-text");
 });
 function country2flag(countryCode) {
-    console.log(countryCode);
     const codePoints = countryCode.toUpperCase().split("").map((char)=>127397 + char.charCodeAt());
     return String.fromCodePoint(...codePoints);
 }
