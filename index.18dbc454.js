@@ -591,6 +591,47 @@ var _moment = require("moment");
 var _momentDefault = parcelHelpers.interopDefault(_moment);
 var _apexcharts = require("apexcharts");
 var _apexchartsDefault = parcelHelpers.interopDefault(_apexcharts);
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+    dataLayer.push(arguments);
+}
+window.consentGranted = function(consent_option) {
+    if (consent_option == "all") {
+        console.log("consent granted to all");
+        gtag("consent", "update", {
+            "functionality_storage": "granted",
+            "analytics_storage": "granted",
+            "ad_storage": "granted",
+            "ad_user_data": "granted",
+            "ad_personalization": "granted",
+            "personalization_storage": "granted",
+            "security_storage": "granted"
+        });
+    } else {
+        console.log("consent granted to " + consent_option);
+        gtag("consent", "update", {
+            consent_option: "granted"
+        });
+    }
+};
+window.consentDenied = function(consent_option) {
+    console.log("consent denied to " + consent_option);
+    gtag("consent", "update", {
+        consent_option: "denied"
+    });
+};
+window.consentGiven = function() {
+    localStorage.setItem("consent-given", "1");
+};
+window.consentCheck = function() {
+    if (localStorage.getItem("consent-given") === "1") {
+        console.log("Cookies consent already given!");
+        return true;
+    } else {
+        console.log("Open cookie settings modal!");
+        return false;
+    }
+};
 window.Alpine = (0, _alpinejsDefault.default);
 (0, _alpinejsDefault.default).start();
 window.moment = (0, _momentDefault.default);
