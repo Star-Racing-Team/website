@@ -596,4 +596,4 @@ document.querySelectorAll(".last-race-datetime").forEach((element)=>{
 
 },{}]},["6uQGQ","bFACH"], "bFACH", "parcelRequire10c2")
 
-//# sourceMappingURL=star-racing-team-aqua.def54240.js.map
+//# sourceMappingURL=star-racing-team-blue-special.def54240.js.map
