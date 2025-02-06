@@ -1,0 +1,2 @@
+document.querySelectorAll(".sidebar li a").forEach(e=>{e.classList.remove("bg-active","text-active-text")}),document.querySelectorAll(".sidebar li:nth-child(4) a").forEach(e=>{e.classList.add("bg-active","text-active-text")}),document.querySelectorAll(".last-race-datetime").forEach(e=>{""!==e.innerText&&(e.innerText=moment(e.innerText,"YYYY-MM-DD HH:mm").fromNow())});
+//# sourceMappingURL=star-racing-team-red.278a0f0e.js.map
