@@ -1182,13 +1182,13 @@ img, video {
   border-color: #1118270d;
 }
 
+.border-transparent {
+  border-color: #0000;
+}
+
 .border-green-400 {
   --tw-border-opacity: 1;
   border-color: rgb(74 222 128 / var(--tw-border-opacity));
-}
-
-.border-transparent {
-  border-color: #0000;
 }
 
 .border-yellow-400 {
