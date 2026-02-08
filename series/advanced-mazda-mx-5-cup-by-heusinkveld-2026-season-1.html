@@ -278,7 +278,7 @@ By "art" we mean the craft of sim-racing on some of the most demanding road cour
                                         </div>
                                         <div class="bg-white overflow-hidden px-4 py-5 rounded-lg shadow sm:p-6">
                                             <dt class="font-medium text-gray-500 text-sm truncate">Our teams participations</dt>
-                                            <dd class="font-semibold mt-1 text-3xl text-gray-900 tracking-tight">68 races</dd>
+                                            <dd class="font-semibold mt-1 text-3xl text-gray-900 tracking-tight">70 races</dd>
                                         </div>
                                     </dl>
                                 </div>
@@ -1320,138 +1320,8 @@ By "art" we mean the craft of sim-racing on some of the most demanding road cour
     </div>
 </footer>
 
-<div x-data=cookies_modal x-cloak x-show=open class="relative z-50" aria-labelledby=modal-title role=dialog aria-modal=true>
-    
-    <div class="bg-gray-500 bg-opacity-75 fixed inset-0 transition-opacity" aria-hidden=true></div>
 
-    <div class="fixed inset-0 overflow-y-auto w-screen z-10">
-        <div class="flex items-end justify-center min-h-full p-4 sm:items-center sm:p-0 text-center">
-            
-            <div class="bg-white overflow-hidden relative rounded-lg shadow-xl sm:max-w-lg sm:my-8 sm:w-full text-left transform transition-all">
-                <div x-show=message>
-                    <div class="bg-white pb-4 pt-5 px-4 sm:p-6 sm:pb-4">
-                        <div class="sm:flex sm:items-start">
-                            <div class="mt-3 sm:ml-4 sm:mt-0 sm:text-left text-center">
-                                <h3 class="font-semibold leading-6 text-active-text text-xl" id=modal-title>We value your privacy</h3>
-                                <div class=mt-2>
-                                    <p class="text-gray-500 text-sm">We use cookies to enhance your browsing experience,
-                                        serve
-                                        personalized ads or content, and analyze our traffic. By clicking "Accept All",
-                                        you
-                                        consent to our use of cookies.
-                                    </p>
-                                    <p class=text-sm>
-                                        <a class="hover:text-active-text text-active-text/60" href=https://starracingteam.com/cookie-policy.html>Cookie Policy</a>.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                        <button type=button @click=acceptAll class="bg-green-600 font-semibold hover:bg-green-500 inline-flex justify-center px-3 py-2 rounded-md shadow-sm sm:ml-3 sm:w-auto text-sm text-white w-full">Accept
-                            All</button>
-                        <button type=button @click="message = !message; settings = !settings;" class="bg-white font-semibold hover:bg-gray-50 inline-flex justify-center mt-3 px-3 py-2 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:mt-0 sm:w-auto text-gray-900 text-sm w-full">Settings</button>
-                    </div>
-                </div>
-                <div x-show=settings>
-                    <div class="bg-white pb-4 pt-5 px-4 sm:p-6 sm:pb-4">
-                        <fieldset>
-                            <div class="divide-gray-200 divide-y">
-                                <div class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=functionality_storage class="font-medium text-gray-900">Functional</label>
-                                        <p id=functionality_storage-description class=text-gray-500>
-                                            Enables storage that supports the functionality of the website or app such as language settings.
-                                        </p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button type=button disabled class="bg-background-button/60 border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=functionality_storage-label aria-describedby=functionality_storage-description>
-                                            <span aria-hidden=true class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition translate-x-5 w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div x-data=security_storage class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=security_storage class="font-medium text-gray-900">Security</label>
-                                        <p id=security_storage-description class=text-gray-500>Enables storage related to security such as authentication functionality, fraud prevention, and other user protection.</p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button @click=toggle type=button :class="[consent ? 'bg-background-button' : 'bg-gray-200']" class="bg-background-button border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-background-button focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=security_storage-label aria-describedby=security_storage-description>
-                                            <span aria-hidden=true :class="[consent ? 'translate-x-5' : 'translate-x-0']" class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div x-data=personalization_storage class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=personalization_storage class="font-medium text-gray-900">Personalization</label>
-                                        <p id=personalization_storage-description class=text-gray-500>Enables storage related to personalization such as video recommendations.</p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button @click=toggle type=button :class="[consent ? 'bg-background-button' : 'bg-gray-200']" class="bg-background-button border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-background-button focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=personalization_storage-label aria-describedby=personalization_storage-description>
-                                            <span aria-hidden=true :class="[consent ? 'translate-x-5' : 'translate-x-0']" class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div x-data=analytics_storage class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=analytics_storage class="font-medium text-gray-900">Analytical</label>
-                                        <p id=analytics_storage-description class=text-gray-500>Enables storage, such as cookies, related to analytics (for example, visit duration).</p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button @click=toggle type=button :class="[consent ? 'bg-background-button' : 'bg-gray-200']" class="bg-background-button border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-background-button focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=analytics_storage-label aria-describedby=analytics_storage-description>
-                                            <span aria-hidden=true :class="[consent ? 'translate-x-5' : 'translate-x-0']" class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div x-data=ad_storage class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=ad_storage class="font-medium text-gray-900">Advertisement</label>
-                                        <p id=ad_storage-description class=text-gray-500>Enables storage, such as cookies, related to advertising.</p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button @click=toggle type=button :class="[consent ? 'bg-background-button' : 'bg-gray-200']" class="bg-background-button border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-background-button focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=ad_storage-label aria-describedby=ad_storage-description>
-                                            <span aria-hidden=true :class="[consent ? 'translate-x-5' : 'translate-x-0']" class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div x-data=ad_user_data class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=ad_user_data class="font-medium text-gray-900">Advertisement user data</label>
-                                        <p id=ad_user_data-description class=text-gray-500>Sets consent for sending user data to Google for online advertising purposes.</p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button @click=toggle type=button :class="[consent ? 'bg-background-button' : 'bg-gray-200']" class="bg-background-button border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-background-button focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=ad_user_data-label aria-describedby=ad_user_data-description>
-                                            <span aria-hidden=true :class="[consent ? 'translate-x-5' : 'translate-x-0']" class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div x-data=ad_personalization class="flex items-center items-start pb-4 pt-3.5 relative">
-                                    <div class="flex-1 leading-6 min-w-0 text-sm">
-                                        <label for=ad_personalization class="font-medium text-gray-900">Advertisement personalization</label>
-                                        <p id=ad_personalization-description class=text-gray-500>Sets consent for personalized advertising.</p>
-                                    </div>
-                                    <div class="flex h-6 items-center ml-3">
-                                        <button @click=toggle type=button :class="[consent ? 'bg-background-button' : 'bg-gray-200']" class="bg-background-button border-2 border-transparent cursor-pointer duration-200 ease-in-out flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-background-button focus:ring-offset-2 h-6 inline-flex relative rounded-full transition-colors w-11" role=switch aria-checked=false aria-labelledby=ad_personalization-label aria-describedby=ad_personalization-description>
-                                            <span aria-hidden=true :class="[consent ? 'translate-x-5' : 'translate-x-0']" class="bg-white duration-200 ease-in-out h-5 inline-block pointer-events-none ring-0 rounded-full shadow transform transition w-5"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                        <button type=button @click=acceptAll class="bg-green-600 font-semibold hover:bg-green-500 inline-flex justify-center px-3 py-2 rounded-md shadow-sm sm:ml-3 sm:w-auto text-sm text-white w-full">Accept
-                            All</button>
-                        <button type=button @click=save class="bg-white font-semibold hover:bg-gray-50 inline-flex justify-center mt-3 px-3 py-2 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:mt-0 sm:w-auto text-gray-900 text-sm w-full">Save
-                            Settings</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>document.addEventListener("alpine:init",()=>{Alpine.data("cookies_modal",()=>({open:!0,message:!0,settings:!1,init(){this.open=!window.consentCheck(),console.log(this.open)},acceptAll(){window.consentGranted("all"),this.open=!1,this.message=!0,this.settings=!1,window.consentGiven()},save(){window.consentGranted("functionality_storage"),window.cookieConsentSettings.analytics_storage?window.consentGranted("analytics_storage"):window.consentDenied("analytics_storage"),window.cookieConsentSettings.ad_storage?window.consentGranted("ad_storage"):window.consentDenied("ad_storage"),window.cookieConsentSettings.ad_user_data?window.consentGranted("ad_user_data"):window.consentDenied("ad_user_data"),window.cookieConsentSettings.ad_personalization?window.consentGranted("ad_personalization"):window.consentDenied("ad_personalization"),window.cookieConsentSettings.personalization_storage?window.consentGranted("personalization_storage"):window.consentDenied("personalization_storage"),window.cookieConsentSettings.security_storage?window.consentGranted("security_storage"):window.consentDenied("security_storage"),window.consentGiven(),this.open=!1}})),Alpine.data("analytics_storage",()=>({consent:!0,toggle(){this.consent=!this.consent,window.cookieConsentSettings.analytics_storage=this.consent}})),Alpine.data("ad_storage",()=>({consent:!0,toggle(){this.consent=!this.consent,window.cookieConsentSettings.ad_storage=this.consent}})),Alpine.data("ad_user_data",()=>({consent:!0,toggle(){this.consent=!this.consent,window.cookieConsentSettings.ad_user_data=this.consent}})),Alpine.data("ad_personalization",()=>({consent:!0,toggle(){this.consent=!this.consent,window.cookieConsentSettings.ad_personalization=this.consent}})),Alpine.data("personalization_storage",()=>({consent:!0,toggle(){this.consent=!this.consent,window.cookieConsentSettings.personalization_storage=this.consent}})),Alpine.data("security_storage",()=>({consent:!0,toggle(){this.consent=!this.consent,window.cookieConsentSettings.security_storage=this.consent}}))});</script>
-
+ 
                 </div>
             </main>
         </div>
